@@ -24,13 +24,13 @@
   ],
   "scripts": {
     "clean": "node scripts/clean.mjs",
-    "build": "pnpm clean && vite build && vue-tsc -p tsconfig.json --emitDeclarationOnly",
+    "build": "pnpm --filter @aiforus/dsl build && pnpm clean && vite build && vue-tsc -p tsconfig.json --emitDeclarationOnly",
     "dev": "vite build --watch",
     "gallery": "vite --config gallery/vite.config.ts",
     "prepublishOnly": "pnpm build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "vue-tsc -p tsconfig.json --noEmit"
+    "typecheck": "pnpm --filter @aiforus/dsl build && vue-tsc -p tsconfig.json --noEmit"
   },
   "engines": {
     "node": ">=22.14.0"
