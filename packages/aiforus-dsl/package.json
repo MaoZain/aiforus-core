@@ -1,6 +1,6 @@
 {
   "name": "@aiforus/dsl",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "OpenMAIC-compatible courseware contracts, schemas, validators, and migrations maintained by AIForUs.",
   "license": "MIT",
   "type": "module",

@@ -67,8 +67,8 @@ pnpm test --project aiforus-dsl
 pnpm --filter @aiforus/dsl build
 ```
 
-This alpha package remains unpublished until the reviewed Phase 4 release after
-the Vue renderer reaches its own compatibility gate.
+Public alpha versions are intended for integration testing. Pin an exact
+prerelease version until the stable compatibility gate is approved.
 
 ## Attribution
 

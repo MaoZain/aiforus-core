@@ -11,6 +11,15 @@ on:
         required: true
         type: boolean
         default: false
+      dist_tag:
+        description: npm distribution channel for the reviewed versions
+        required: true
+        type: choice
+        options:
+          - alpha
+          - next
+          - latest
+        default: alpha
 
 concurrency:
   group: release-${{ github.ref }}
@@ -73,6 +82,8 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 22.16.0
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
 
       - name: Install an OIDC-capable npm CLI
         run: npm install --global "npm@^11.5.1"
@@ -81,4 +92,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Publish reviewed versions
-        run: pnpm release
+        run: pnpm release --tag "${{ inputs.dist_tag }}"

@@ -18,10 +18,11 @@ adopted merely because it is newer.
 
 ## Package version status
 
-`@aiforus/dsl@0.1.0-alpha.0` is the first frozen-contract implementation. It is
-still unpublished until the alpha publication is explicitly approved.
-`@aiforus/vue-renderer@0.1.0-alpha.0` is likewise release-ready only after the
-Phase 3 clean-consumer and repository gates pass.
+The public integration line began with `0.1.0-alpha.0`; the current reviewed
+source versions are `0.1.0-alpha.1` and may be published only through the OIDC
+release workflow under the `alpha` channel. All are integration prereleases,
+not stable versions. Consumers must pin an exact prerelease version until the
+stable compatibility gate is approved.
 
 ## Non-goals of the initial slide release
 
