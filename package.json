@@ -1,0 +1,40 @@
+{
+  "name": "aiforus-core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "MIT-licensed courseware contracts and Vue renderers maintained by AIForUs.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=22.14.0",
+    "pnpm": ">=11.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --recursive --if-present build",
+    "changeset": "changeset",
+    "clean": "node scripts/clean.mjs",
+    "compare:upstream": "node scripts/compare-upstream.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "release": "pnpm verify:release && changeset publish",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "pnpm --recursive --if-present typecheck",
+    "verify:licenses": "node scripts/audit-licenses.mjs",
+    "verify:packages": "node scripts/verify-packages.mjs",
+    "verify:release": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm verify:packages && pnpm verify:licenses",
+    "version-packages": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.31.0",
+    "@eslint/js": "9.39.1",
+    "eslint": "9.39.1",
+    "globals": "17.7.0",
+    "prettier": "3.9.5",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.64.0",
+    "vite": "7.2.2",
+    "vitest": "4.1.10"
+  }
+}

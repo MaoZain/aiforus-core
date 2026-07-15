@@ -1,0 +1,52 @@
+{
+  "name": "@aiforus/vue-renderer",
+  "version": "0.0.0",
+  "description": "Vue 3 renderer for the AIForUs OpenMAIC-compatible slide DSL.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm build",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaoZain/aiforus-core.git",
+    "directory": "packages/aiforus-vue-renderer"
+  },
+  "homepage": "https://github.com/MaoZain/aiforus-core#readme",
+  "bugs": {
+    "url": "https://github.com/MaoZain/aiforus-core/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@aiforus/dsl": "workspace:^"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "vue": "3.5.39"
+  }
+}

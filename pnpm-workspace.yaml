@@ -1,0 +1,8 @@
+packages:
+  - packages/*
+
+allowBuilds:
+  esbuild: true
+
+engineStrict: true
+nodeVersion: 22.16.0

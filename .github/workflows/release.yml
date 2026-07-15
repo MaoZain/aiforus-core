@@ -1,0 +1,84 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish reviewed package versions with npm Trusted Publishing
+        required: true
+        type: boolean
+        default: false
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  version-pr:
+    name: Update release pull request
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.16.0
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Create or update Changesets release pull request
+        uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          title: Release packages
+          commit: Release packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    name: Publish with npm OIDC
+    if: github.event_name == 'workflow_dispatch' && inputs.publish && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.7.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22.16.0
+
+      - name: Install an OIDC-capable npm CLI
+        run: npm install --global "npm@^11.5.1"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Publish reviewed versions
+        run: pnpm release

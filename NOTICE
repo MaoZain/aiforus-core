@@ -1,0 +1,14 @@
+aiforus-core
+Copyright (c) 2026 Ziting Mao and AIForUs contributors
+
+This repository is designed to contain software derived in part from OpenMAIC:
+
+  OpenMAIC
+  Copyright (c) 2026 THU-MAIC
+  https://github.com/THU-MAIC/OpenMAIC
+  Baseline commit: d8a0081c7d229081301dfa5f21ccfd7ba93bda51
+  License: MIT
+
+The complete upstream license is preserved in licenses/OpenMAIC-LICENSE.
+UPSTREAM.md records imported paths and local mappings. At Phase 1 no OpenMAIC
+source files have been imported into the package source trees.
