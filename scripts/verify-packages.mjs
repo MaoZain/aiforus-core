@@ -13,7 +13,14 @@ const packages = [
   {
     directory: 'packages/aiforus-vue-renderer',
     name: '@aiforus/vue-renderer',
-    required: ['LICENSE', 'README.md', 'dist/index.d.ts', 'dist/index.js', 'package.json'],
+    required: [
+      'LICENSE',
+      'README.md',
+      'dist/index.d.ts',
+      'dist/index.js',
+      'dist/style.css',
+      'package.json',
+    ],
   },
 ];
 

@@ -1,7 +1,7 @@
 {
   "name": "@aiforus/vue-renderer",
-  "version": "0.0.0",
-  "description": "Vue 3 renderer for the AIForUs OpenMAIC-compatible slide DSL.",
+  "version": "0.1.0-alpha.0",
+  "description": "Vue 3 slide renderer and action player for the AIForUs OpenMAIC-compatible DSL.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -11,18 +11,26 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "./dist/style.css"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "clean": "node scripts/clean.mjs",
+    "build": "pnpm clean && vite build && vue-tsc -p tsconfig.json --emitDeclarationOnly",
+    "dev": "vite build --watch",
+    "gallery": "vite --config gallery/vite.config.ts",
     "prepublishOnly": "pnpm build",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "vue-tsc -p tsconfig.json --noEmit"
   },
   "engines": {
     "node": ">=22.14.0"
@@ -44,9 +52,14 @@
     "@aiforus/dsl": "workspace:^"
   },
   "peerDependencies": {
-    "vue": "^3.5.0"
+    "vue": ">=3.4.0 <4"
   },
   "devDependencies": {
-    "vue": "3.5.39"
+    "@vue/compiler-sfc": "3.4.30",
+    "@vue/server-renderer": "3.4.30",
+    "@vue/test-utils": "2.4.11",
+    "jsdom": "29.1.1",
+    "vue": "3.4.30",
+    "vue-tsc": "3.3.7"
   }
 }

@@ -13,6 +13,7 @@ const approvedLicenses = new Set([
   'CC0-1.0',
   'ISC',
   'MIT',
+  'MIT-0',
   'Python-2.0',
   'Unlicense',
 ]);

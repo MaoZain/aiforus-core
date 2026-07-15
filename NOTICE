@@ -14,3 +14,9 @@ UPSTREAM.md records imported paths and local mappings. The `@aiforus/dsl`
 implementation imports the frozen OpenMAIC DSL source and tests with package
 identity changes; the distributed package LICENSE preserves the upstream
 copyright and permission notice.
+
+The `@aiforus/vue-renderer` implementation is a Vue 3 behavioral
+reimplementation informed by the frozen `@openmaic/renderer@0.0.2` source and
+tests. It does not ship React, the OpenMAIC font bundle, or copied OpenMAIC
+media. Its distributed LICENSE also preserves the upstream copyright and MIT
+permission notice.

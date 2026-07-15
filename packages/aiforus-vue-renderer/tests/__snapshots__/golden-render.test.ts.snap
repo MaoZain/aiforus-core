@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`golden slide render contract > keeps the design geometry and effect markup stable for all element types 1`] = `
+{
+  "elements": [
+    {
+      "class": "aiforus-element aiforus-element-text element-content",
+      "style": "left: 50px; top: 32px; width: 900px; height: 64px; transform: rotate(0deg);",
+    },
+    {
+      "class": "aiforus-element aiforus-element-line element-content",
+      "style": "left: 50px; top: 112px;",
+    },
+    {
+      "class": "aiforus-element aiforus-element-image element-content",
+      "style": "left: 50px; top: 145px; width: 180px; height: 130px; transform: rotate(0deg); -webkit-filter: drop-shadow(0px 8px 18px rgba(15,23,42,0.18));",
+    },
+    {
+      "class": "aiforus-element aiforus-element-shape element-content",
+      "style": "left: 50px; top: 300px; width: 180px; height: 78px; transform: rotate(0deg);",
+    },
+    {
+      "class": "aiforus-element aiforus-element-chart element-content",
+      "style": "left: 250px; top: 145px; width: 250px; height: 170px; transform: rotate(0deg); background-color: rgba(255, 255, 255, 0.86); color: rgb(51, 65, 85); border: 1px solid rgb(219, 234, 254);",
+    },
+    {
+      "class": "aiforus-element aiforus-element-table element-content",
+      "style": "left: 520px; top: 145px; width: 430px; height: 170px; transform: rotate(0deg);",
+    },
+    {
+      "class": "aiforus-element aiforus-element-latex element-content",
+      "style": "left: 50px; top: 410px; width: 180px; height: 70px; transform: rotate(0deg); color: rgb(124, 58, 237); justify-content: center;",
+    },
+    {
+      "class": "aiforus-element aiforus-element-video element-content",
+      "style": "left: 250px; top: 350px; width: 220px; height: 124px; transform: rotate(0deg);",
+    },
+    {
+      "class": "aiforus-element aiforus-element-audio element-content",
+      "style": "left: 500px; top: 375px; width: 180px; height: 54px; transform: rotate(0deg); color: rgb(37, 99, 235);",
+    },
+    {
+      "class": "aiforus-element aiforus-element-code element-content",
+      "style": "left: 700px; top: 350px; width: 250px; height: 160px; transform: rotate(0deg); font-size: 13px;",
+    },
+  ],
+  "laserStyle": "left: 375px; top: 230px; color: rgb(255, 59, 48);",
+  "spotlightHole": {
+    "fill": "black",
+    "height": "182",
+    "rx": "8",
+    "transform": "rotate(0 375 230)",
+    "width": "262",
+    "x": "244",
+    "y": "139",
+  },
+  "viewportStyle": "width: 1000px; height: 562.5px; left: 0px; top: 0px; transform: scale(1); transform-origin: top left;",
+}
+`;
