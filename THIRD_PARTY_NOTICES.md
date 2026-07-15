@@ -2,14 +2,17 @@
 
 ## Distributed package dependencies
 
-`@aiforus/dsl@0.0.0` has no runtime dependencies.
+`@aiforus/dsl@0.1.0-alpha.0` has no runtime dependencies. Its contract source is
+derived from `@openmaic/dsl@0.4.0` at commit
+`d8a0081c7d229081301dfa5f21ccfd7ba93bda51` under MIT; the upstream notice is
+preserved in the package LICENSE and repository `NOTICE`.
 
 `@aiforus/vue-renderer@0.0.0` depends on the workspace DSL package and declares
 Vue 3 as an MIT-licensed peer dependency. The renderer contains no copied Vue
 source.
 
-No fonts, icons, example media, generated assets, or binary resources are
-distributed in the Phase 1 package skeletons.
+No fonts, icons, example media, fixtures, or binary resources are distributed
+in the DSL package tarball. Compatibility fixtures remain test-only.
 
 ## Development tooling
 

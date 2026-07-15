@@ -1,4 +1,8 @@
+import { fileURLToPath } from 'node:url';
+
 import { defineConfig } from 'vitest/config';
+
+const dslEntry = fileURLToPath(new URL('./packages/aiforus-dsl/src/index.ts', import.meta.url));
 
 export default defineConfig({
   test: {
@@ -8,6 +12,11 @@ export default defineConfig({
     },
     projects: [
       {
+        resolve: {
+          alias: {
+            '@aiforus/dsl': dslEntry,
+          },
+        },
         test: {
           include: ['tests/**/*.test.ts'],
           name: 'aiforus-dsl',

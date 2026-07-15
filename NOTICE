@@ -10,5 +10,7 @@ This repository is designed to contain software derived in part from OpenMAIC:
   License: MIT
 
 The complete upstream license is preserved in licenses/OpenMAIC-LICENSE.
-UPSTREAM.md records imported paths and local mappings. At Phase 1 no OpenMAIC
-source files have been imported into the package source trees.
+UPSTREAM.md records imported paths and local mappings. The `@aiforus/dsl`
+implementation imports the frozen OpenMAIC DSL source and tests with package
+identity changes; the distributed package LICENSE preserves the upstream
+copyright and permission notice.

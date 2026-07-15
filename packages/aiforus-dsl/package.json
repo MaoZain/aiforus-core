@@ -1,7 +1,7 @@
 {
   "name": "@aiforus/dsl",
-  "version": "0.0.0",
-  "description": "OpenMAIC-compatible slide data contracts maintained by AIForUs.",
+  "version": "0.1.0-alpha.0",
+  "description": "OpenMAIC-compatible courseware contracts, schemas, validators, and migrations maintained by AIForUs.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -11,7 +11,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./schema/*": "./dist/schema/*"
   },
   "files": [
     "dist",
@@ -20,8 +21,13 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "clean": "node scripts/clean.mjs",
+    "build": "pnpm clean && tsc -p tsconfig.json && node scripts/gen-schema.mjs",
+    "build:schema": "node scripts/gen-schema.mjs",
+    "dev": "tsc -p tsconfig.json --watch",
     "prepublishOnly": "pnpm build",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "engines": {
@@ -39,5 +45,17 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "keywords": [
+    "aiforus",
+    "openmaic",
+    "dsl",
+    "slide",
+    "schema",
+    "contract"
+  ],
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "ts-json-schema-generator": "2.4.0"
   }
 }

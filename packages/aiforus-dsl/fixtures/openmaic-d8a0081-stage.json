@@ -1,0 +1,12 @@
+{
+  "id": "stage-baseline",
+  "name": "OpenMAIC compatibility baseline",
+  "description": "Pinned fixture for the AIForUs DSL compatibility boundary.",
+  "createdAt": 1784131200000,
+  "updatedAt": 1784131200000,
+  "languageDirective": "zh-CN",
+  "style": "academic",
+  "agentIds": ["teacher"],
+  "interactiveMode": false,
+  "taskEngineMode": false
+}

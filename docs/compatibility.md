@@ -16,9 +16,9 @@ adopted merely because it is newer.
 
 ## Package version status
 
-Version `0.0.0` is an unpublished bootstrap version. It carries no consumer
-compatibility guarantee. Compatibility fixtures and conformance tests must be
-present before an alpha release.
+`@aiforus/dsl@0.1.0-alpha.0` is the first frozen-contract implementation. It is
+still unpublished until the clean-consumer and alpha release gates complete.
+The renderer remains an unpublished `0.0.0` skeleton until Phase 3.
 
 ## Non-goals of the initial slide release
 

@@ -1,0 +1,25 @@
+{
+  "id": "scene-quiz",
+  "stageId": "stage-baseline",
+  "type": "quiz",
+  "title": "Knowledge check",
+  "order": 1,
+  "content": {
+    "type": "quiz",
+    "questions": [
+      {
+        "id": "question-1",
+        "type": "single",
+        "question": "Which value is the slide scene discriminant?",
+        "options": [
+          { "label": "slide", "value": "A" },
+          { "label": "page", "value": "B" }
+        ],
+        "answer": ["A"],
+        "analysis": "The serialized discriminant is slide.",
+        "hasAnswer": true,
+        "points": 1
+      }
+    ]
+  }
+}
