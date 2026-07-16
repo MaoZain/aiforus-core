@@ -20,8 +20,10 @@ from reviewed commits after all phase-specific gates pass.
 
 Manual publishing requires an explicit `dist_tag` workflow input. Use `alpha`
 for the current integration series, `next` for a later release candidate, and
-`latest` only for a reviewed stable version. The workflow forwards this value
-to `changeset publish --tag`; it never relies on npm's default tag.
+`latest` only for a reviewed stable version. In Changesets prerelease mode the
+workflow verifies that the input matches `.changeset/pre.json` and lets
+Changesets apply that recorded tag; outside prerelease mode it forwards the
+input to `changeset publish --tag`. It never relies on npm's default tag.
 
 ## npm Trusted Publishing
 

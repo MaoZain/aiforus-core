@@ -92,4 +92,16 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Publish reviewed versions
-        run: pnpm release --tag "${{ inputs.dist_tag }}"
+        env:
+          DIST_TAG: ${{ inputs.dist_tag }}
+        run: |
+          if [[ -f .changeset/pre.json ]]; then
+            PRE_TAG="$(node -p "JSON.parse(require('fs').readFileSync('.changeset/pre.json', 'utf8')).tag")"
+            if [[ "$PRE_TAG" != "$DIST_TAG" ]]; then
+              echo "Requested dist-tag '$DIST_TAG' does not match Changesets prerelease tag '$PRE_TAG'." >&2
+              exit 1
+            fi
+            pnpm release
+          else
+            pnpm release --tag "$DIST_TAG"
+          fi
