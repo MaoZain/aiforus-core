@@ -18,7 +18,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "release": "pnpm verify:release && changeset publish",
+    "release": "pnpm verify:release && node scripts/publish-artifacts.mjs",
     "test": "vitest run --passWithNoTests",
     "typecheck": "pnpm --recursive --if-present typecheck",
     "verify:licenses": "node scripts/audit-licenses.mjs",

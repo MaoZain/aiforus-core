@@ -18,10 +18,11 @@ adopted merely because it is newer.
 
 ## Package version status
 
-The public integration line began with `0.1.0-alpha.0`; the current reviewed
-source versions are `0.1.0-alpha.1` and may be published only through the OIDC
-release workflow under the `alpha` channel. All are integration prereleases,
-not stable versions. Consumers must pin an exact prerelease version until the
+The public integration line began with `0.1.0-alpha.0`. The current reviewed
+versions are `@aiforus/dsl@0.1.0-alpha.1` and
+`@aiforus/vue-renderer@0.1.0-alpha.1`, published through GitHub OIDC with npm
+SLSA provenance under the `alpha` channel. They are integration prereleases,
+not stable versions. Consumers must pin the exact prerelease versions until the
 stable compatibility gate is approved.
 
 ## Non-goals of the initial slide release

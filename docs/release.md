@@ -20,10 +20,12 @@ from reviewed commits after all phase-specific gates pass.
 
 Manual publishing requires an explicit `dist_tag` workflow input. Use `alpha`
 for the current integration series, `next` for a later release candidate, and
-`latest` only for a reviewed stable version. In Changesets prerelease mode the
-workflow verifies that the input matches `.changeset/pre.json` and lets
-Changesets apply that recorded tag; outside prerelease mode it forwards the
-input to `changeset publish --tag`. It never relies on npm's default tag.
+`latest` only for a reviewed stable version. Changesets owns versioning and
+changelogs, while `scripts/publish-artifacts.mjs` publishes the exact tarballs
+produced by `verify:packages` with the selected tag. The script rejects a
+prerelease sent to `latest`, supports safe reruns, and verifies the selected
+tag plus SLSA provenance after publication. It never relies on npm's default
+tag.
 
 ## npm Trusted Publishing
 
@@ -45,11 +47,14 @@ the next version, then use only the manual `publish` input of `release.yml` for
 subsequent publishes. Do not store the bootstrap credential.
 
 The public registry requires every package document to have a `latest` key.
-Consequently, the first publication also exposes `latest -> 0.1.0-alpha.0`
-even though `--tag alpha` was used; npm rejects removing the package's only
-`latest` key. This is not a stable release: the target is a SemVer prerelease.
-Applications must install an exact prerelease version during integration. A
-future stable release may move `latest` only after its stable gates pass.
+The bootstrap publication therefore exposed `latest -> 0.1.0-alpha.0`, and
+Changesets moved it to `0.1.0-alpha.1` because neither package has ever had a
+regular release. npm rejects removing the package's only `latest` key. This is
+not a stable release: the target is still a SemVer prerelease. The custom
+artifact publisher now rejects any further prerelease directed to `latest`, so
+`alpha` advances independently until a reviewed stable release may move
+`latest`. Applications must install an exact prerelease version during
+integration.
 
 Trusted Publishing automatically creates provenance for public packages from
 this public GitHub repository.
