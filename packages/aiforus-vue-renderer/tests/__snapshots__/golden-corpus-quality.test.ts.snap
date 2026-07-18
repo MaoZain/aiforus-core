@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Phase 7 golden corpus > keeps deterministic serialized visual screenshots at small and large scales 1`] = `
+{
+  "chemistry-history-timeline:large": "e0e76be668961b7f760c2b53798ac239086f56a1ba4812fd87ecc38a100e0c8c",
+  "chemistry-history-timeline:small": "e5a2d2478a75a2901f196c92301ee7ffd4b15e60bca860a290f8ede8aef3bd63",
+  "language-long-text:large": "04bee796840f79e7e890c7ffff963325a6c5d45e27e18eda002f4e7979b5d686",
+  "language-long-text:small": "04fa2e3b9a434d42ece0744bd8c3a5099bf56eeae800e948facf5dafd14c12e7",
+  "math-physics-diagram:large": "4b40f7be34464bde316c0bfd133dacdb17bde3f1caeb43b95f581adcf4ce2814",
+  "math-physics-diagram:small": "a64d38232d5f6e01f4e5a6ba8774e9e226e4c3da77a1c7482ac0ed3ebb458927",
+  "media-table-chart-actions:large": "cf17e13e28108d84777d4225a50f3170ae4d7af13407ae265f7d91d185e62708",
+  "media-table-chart-actions:small": "3777e15f3c596e8e2679a8c93af234767b2920c62bc286ef69630d7656e931ff",
+}
+`;
