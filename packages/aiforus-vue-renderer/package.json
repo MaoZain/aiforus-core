@@ -1,6 +1,6 @@
 {
   "name": "@aiforus/vue-renderer",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0",
   "description": "Vue 3 slide renderer and action player for the AIForUs OpenMAIC-compatible DSL.",
   "license": "MIT",
   "type": "module",

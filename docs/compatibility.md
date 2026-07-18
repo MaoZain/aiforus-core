@@ -7,7 +7,7 @@ scene, and action contract from the pinned OpenMAIC baseline. Compatibility is
 defined at JSON and observable playback boundaries, not at framework component
 APIs.
 
-`@aiforus/vue-renderer@0.1.0-alpha.0` is the first Vue 3 implementation. It
+`@aiforus/vue-renderer@0.1.0` is the first stable Vue 3 implementation. It
 renders the frozen Slide element contract, executes Slide effects/actions, and
 exposes explicit host adapters. It does not reproduce the React component API
 of `@openmaic/renderer`.
@@ -19,11 +19,11 @@ adopted merely because it is newer.
 ## Package version status
 
 The public integration line began with `0.1.0-alpha.0`. The current reviewed
-versions are `@aiforus/dsl@0.1.0-alpha.1` and
-`@aiforus/vue-renderer@0.1.0-alpha.1`, published through GitHub OIDC with npm
-SLSA provenance under the `alpha` channel. They are integration prereleases,
-not stable versions. Consumers must pin the exact prerelease versions until the
-stable compatibility gate is approved.
+stable versions are `@aiforus/dsl@0.1.0` and
+`@aiforus/vue-renderer@0.1.0`, published through GitHub OIDC with npm SLSA
+provenance under the `latest` channel. AIForUs applications pin both packages
+to the same exact version so the generated JSON Schema and renderer stay
+aligned.
 
 ## Non-goals of the initial slide release
 

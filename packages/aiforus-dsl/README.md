@@ -67,8 +67,9 @@ pnpm test --project aiforus-dsl
 pnpm --filter @aiforus/dsl build
 ```
 
-Public alpha versions are intended for integration testing. Pin an exact
-prerelease version until the stable compatibility gate is approved.
+Stable consumers should pin a compatible release range according to their own
+upgrade policy. AIForUs applications pin the exact package version so backend
+schema validation and frontend rendering always use the same contract.
 
 ## Attribution
 

@@ -10,9 +10,10 @@ Initial packages:
 - `@aiforus/vue-renderer`: a Vue 3 renderer for the slide contract and its
   playback actions.
 
-The repository is currently in its bootstrap stage. Package versions remain
-`0.0.0` and must not be published until their phase-specific compatibility and
-release gates pass.
+The first stable slide packages are `@aiforus/dsl@0.1.0` and
+`@aiforus/vue-renderer@0.1.0`. Their compatibility baseline is frozen to the
+reviewed OpenMAIC commit documented in `UPSTREAM.md`; upstream changes are
+adopted only through an explicit review and release.
 
 ## Development
 

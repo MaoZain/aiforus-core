@@ -48,13 +48,11 @@ subsequent publishes. Do not store the bootstrap credential.
 
 The public registry requires every package document to have a `latest` key.
 The bootstrap publication therefore exposed `latest -> 0.1.0-alpha.0`, and
-Changesets moved it to `0.1.0-alpha.1` because neither package has ever had a
-regular release. npm rejects removing the package's only `latest` key. This is
-not a stable release: the target is still a SemVer prerelease. The custom
-artifact publisher now rejects any further prerelease directed to `latest`, so
-`alpha` advances independently until a reviewed stable release may move
-`latest`. Applications must install an exact prerelease version during
-integration.
+Changesets moved it to `0.1.0-alpha.1` because neither package had a regular
+release. npm rejects removing the package's only `latest` key. The reviewed
+`0.1.0` stable release replaces that temporary prerelease target. The custom
+artifact publisher rejects prereleases directed to `latest`, so future
+prerelease channels continue to advance independently.
 
 Trusted Publishing automatically creates provenance for public packages from
 this public GitHub repository.
